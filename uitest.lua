@@ -24,7 +24,7 @@ uiCorner.Parent = mainFrame
 -- Adjusted Top Title Text
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Size = UDim2.new(1, 0, 0.1, 0)
-titleLabel.Position = UDim2.new(0.5, 0, 0.1, 0) -- Moved higher (10% from the top)
+titleLabel.Position = UDim2.new(0.5, 0, 0.05, 0) -- Slightly higher, near the top (5% height)
 titleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 titleLabel.BackgroundTransparency = 1
 titleLabel.Text = "RINGTA BOND FARM"
@@ -36,7 +36,7 @@ titleLabel.Parent = mainFrame
 -- Adjusted Center Text
 local mainLabel = Instance.new("TextLabel")
 mainLabel.Size = UDim2.new(1, 0, 0.2, 0)
-mainLabel.Position = UDim2.new(0.5, 0, 0.2, 0) -- Moved closer to the titleLabel (10% apart)
+mainLabel.Position = UDim2.new(0.5, 0, 0.2, 0) -- Aligned closer to the titleLabel (20% height)
 mainLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 mainLabel.BackgroundTransparency = 1
 mainLabel.Text = "MADE BY RINGTA AND LUSHY LOVER"
@@ -45,10 +45,10 @@ mainLabel.TextScaled = true
 mainLabel.Font = Enum.Font.GothamBold
 mainLabel.Parent = mainFrame
 
--- Adjusted Discord Link
+-- Adjusted Discord Link (around 50% height for centering)
 local linkLabel = Instance.new("TextLabel")
 linkLabel.Size = UDim2.new(1, 0, 0.1, 0)
-linkLabel.Position = UDim2.new(0.5, 0, 0.3, 0) -- Moved closer to the mainLabel (10% apart)
+linkLabel.Position = UDim2.new(0.5, 0, 0.5, 0) -- Middle of the frame (50% height)
 linkLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 linkLabel.BackgroundTransparency = 1
 linkLabel.Text = "https://discord.gg/ringta"
