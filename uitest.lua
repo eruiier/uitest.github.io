@@ -21,10 +21,10 @@ local uiCorner = Instance.new("UICorner")
 uiCorner.CornerRadius = UDim.new(0.03, 0)
 uiCorner.Parent = mainFrame
 
--- Adjusted Top Title Text
+-- Top title text
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Size = UDim2.new(1, 0, 0.1, 0)
-titleLabel.Position = UDim2.new(0.5, 0, 0.05, 0) -- Slightly higher, near the top (5% height)
+titleLabel.Position = UDim2.new(0.5, 0, 0.05, 0) -- Near the top (5% height)
 titleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 titleLabel.BackgroundTransparency = 1
 titleLabel.Text = "RINGTA BOND FARM"
@@ -33,10 +33,10 @@ titleLabel.TextScaled = true
 titleLabel.Font = Enum.Font.GothamBold
 titleLabel.Parent = mainFrame
 
--- Slightly Lowered Center Text
+-- Center text
 local mainLabel = Instance.new("TextLabel")
 mainLabel.Size = UDim2.new(1, 0, 0.2, 0)
-mainLabel.Position = UDim2.new(0.5, 0, 0.25, 0) -- Moved down slightly for better spacing
+mainLabel.Position = UDim2.new(0.5, 0, 0.25, 0) -- Slightly lower (25% height)
 mainLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 mainLabel.BackgroundTransparency = 1
 mainLabel.Text = "MADE BY RINGTA AND LUSHY LOVER"
@@ -45,7 +45,7 @@ mainLabel.TextScaled = true
 mainLabel.Font = Enum.Font.GothamBold
 mainLabel.Parent = mainFrame
 
--- Adjusted Discord Link (around 50% height for centering)
+-- Discord link
 local linkLabel = Instance.new("TextLabel")
 linkLabel.Size = UDim2.new(1, 0, 0.1, 0)
 linkLabel.Position = UDim2.new(0.5, 0, 0.5, 0) -- Middle of the frame (50% height)
@@ -60,7 +60,7 @@ linkLabel.Parent = mainFrame
 -- Dynamic text at 90% down
 local dynamicLabel = Instance.new("TextLabel")
 dynamicLabel.Size = UDim2.new(1, 0, 0.1, 0)
-dynamicLabel.Position = UDim2.new(0.5, 0, 0.9, 0) -- Kept at the original position
+dynamicLabel.Position = UDim2.new(0.5, 0, 0.9, 0) -- Kept at original position
 dynamicLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 dynamicLabel.BackgroundTransparency = 1
 dynamicLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -68,6 +68,18 @@ dynamicLabel.TextScaled = true
 dynamicLabel.Font = Enum.Font.GothamBold
 dynamicLabel.Text = "Starting..." -- Initial text
 dynamicLabel.Parent = mainFrame
+
+-- New dynamic bonds collection text at 70% height
+local bondsLabel = Instance.new("TextLabel")
+bondsLabel.Size = UDim2.new(1, 0, 0.1, 0)
+bondsLabel.Position = UDim2.new(0.5, 0, 0.7, 0) -- At 70% height
+bondsLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+bondsLabel.BackgroundTransparency = 1
+bondsLabel.TextColor3 = Color3.fromRGB(150, 255, 150)
+bondsLabel.TextScaled = true
+bondsLabel.Font = Enum.Font.GothamBold
+bondsLabel.Text = "" -- Start with no text
+bondsLabel.Parent = mainFrame
 
 -- Timer logic for dynamic text updates
 task.spawn(function()
@@ -78,4 +90,16 @@ task.spawn(function()
     dynamicLabel.Text = "Collecting bonds now"
     wait(35) -- 27 + 35 = 62 seconds
     dynamicLabel.Text = "Restarting script"
+end)
+
+-- Timer logic for bonds collection
+task.spawn(function()
+    wait(28) -- Start updating bonds at 28 seconds
+    local bonds = 1 -- Start from 1 bond
+    local targetBonds = math.random(70, 90) -- Random target between 70 and 90 bonds
+    while bonds <= targetBonds do
+        wait(2) -- Increment every 2 seconds for a slow climb
+        bonds = math.min(bonds + math.random(1, 3), targetBonds) -- Gradually increment by 1-3
+        bondsLabel.Text = tostring(bonds) .. " bonds collected"
+    end
 end)
