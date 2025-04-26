@@ -92,14 +92,18 @@ task.spawn(function()
     dynamicLabel.Text = "Restarting script"
 end)
 
--- Timer logic for bonds collection
+-- Timer logic for bonds collection with controlled pace
 task.spawn(function()
     wait(28) -- Start updating bonds at 28 seconds
     local bonds = 1 -- Start from 1 bond
     local targetBonds = math.random(70, 90) -- Random target between 70 and 90 bonds
-    while bonds <= targetBonds do
-        wait(2) -- Increment every 2 seconds for a slow climb
-        bonds = math.min(bonds + math.random(1, 3), targetBonds) -- Gradually increment by 1-3
-        bondsLabel.Text = tostring(bonds) .. " bonds collected"
+    local totalTime = 34 -- Total time to reach the target (seconds)
+    local interval = totalTime / targetBonds -- Calculate time interval per increment
+
+    while bonds < targetBonds do
+        wait(interval) -- Wait a proportional amount of time
+        bonds = math.min(bonds + 1, targetBonds) -- Increment bonds by 1
+        bondsLabel.Text = tostring(bonds) .. " bonds being collected"
     end
+    bondsLabel.Text = tostring(targetBonds) .. " bonds collected" -- Final result
 end)
