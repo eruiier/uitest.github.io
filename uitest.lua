@@ -21,10 +21,10 @@ local uiCorner = Instance.new("UICorner")
 uiCorner.CornerRadius = UDim.new(0.03, 0)
 uiCorner.Parent = mainFrame
 
--- Top title text
+-- Adjusted Top Title Text
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Size = UDim2.new(1, 0, 0.1, 0)
-titleLabel.Position = UDim2.new(0.5, 0, 0.2, 0)
+titleLabel.Position = UDim2.new(0.5, 0, 0.1, 0) -- Moved higher (10% from the top)
 titleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 titleLabel.BackgroundTransparency = 1
 titleLabel.Text = "RINGTA BOND FARM"
@@ -33,22 +33,22 @@ titleLabel.TextScaled = true
 titleLabel.Font = Enum.Font.GothamBold
 titleLabel.Parent = mainFrame
 
--- Big center text
+-- Adjusted Center Text
 local mainLabel = Instance.new("TextLabel")
 mainLabel.Size = UDim2.new(1, 0, 0.2, 0)
-mainLabel.Position = UDim2.new(0.5, 0, 0.45, 0)
+mainLabel.Position = UDim2.new(0.5, 0, 0.2, 0) -- Moved closer to the titleLabel (10% apart)
 mainLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 mainLabel.BackgroundTransparency = 1
 mainLabel.Text = "MADE BY RINGTA AND LUSHY LOVER"
 mainLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 mainLabel.TextScaled = true
-mainLabel.Font = Enum.Font.GothamBold -- Matches other text fonts
+mainLabel.Font = Enum.Font.GothamBold
 mainLabel.Parent = mainFrame
 
--- Lower Discord link
+-- Adjusted Discord Link
 local linkLabel = Instance.new("TextLabel")
 linkLabel.Size = UDim2.new(1, 0, 0.1, 0)
-linkLabel.Position = UDim2.new(0.5, 0, 0.7, 0)
+linkLabel.Position = UDim2.new(0.5, 0, 0.3, 0) -- Moved closer to the mainLabel (10% apart)
 linkLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 linkLabel.BackgroundTransparency = 1
 linkLabel.Text = "https://discord.gg/ringta"
@@ -60,7 +60,7 @@ linkLabel.Parent = mainFrame
 -- Dynamic text at 90% down
 local dynamicLabel = Instance.new("TextLabel")
 dynamicLabel.Size = UDim2.new(1, 0, 0.1, 0)
-dynamicLabel.Position = UDim2.new(0.5, 0, 0.9, 0)
+dynamicLabel.Position = UDim2.new(0.5, 0, 0.9, 0) -- Kept at the original position
 dynamicLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 dynamicLabel.BackgroundTransparency = 1
 dynamicLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
