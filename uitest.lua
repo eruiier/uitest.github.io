@@ -33,10 +33,10 @@ titleLabel.TextScaled = true
 titleLabel.Font = Enum.Font.GothamBold
 titleLabel.Parent = mainFrame
 
--- Adjusted Center Text
+-- Slightly Lowered Center Text
 local mainLabel = Instance.new("TextLabel")
 mainLabel.Size = UDim2.new(1, 0, 0.2, 0)
-mainLabel.Position = UDim2.new(0.5, 0, 0.2, 0) -- Aligned closer to the titleLabel (20% height)
+mainLabel.Position = UDim2.new(0.5, 0, 0.25, 0) -- Moved down slightly for better spacing
 mainLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 mainLabel.BackgroundTransparency = 1
 mainLabel.Text = "MADE BY RINGTA AND LUSHY LOVER"
