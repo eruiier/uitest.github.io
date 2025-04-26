@@ -33,16 +33,16 @@ titleLabel.TextScaled = true
 titleLabel.Font = Enum.Font.GothamBold
 titleLabel.Parent = mainFrame
 
--- Big center text (smaller size for MADE BY RINGTA AND LUSHY LOVER)
+-- Big center text
 local mainLabel = Instance.new("TextLabel")
-mainLabel.Size = UDim2.new(1, 0, 0.2, 0) -- Reduced height for smaller text
+mainLabel.Size = UDim2.new(1, 0, 0.2, 0)
 mainLabel.Position = UDim2.new(0.5, 0, 0.45, 0)
 mainLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 mainLabel.BackgroundTransparency = 1
 mainLabel.Text = "MADE BY RINGTA AND LUSHY LOVER"
 mainLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 mainLabel.TextScaled = true
-mainLabel.Font = Enum.Font.Arcade
+mainLabel.Font = Enum.Font.GothamBold -- Matches other text fonts
 mainLabel.Parent = mainFrame
 
 -- Lower Discord link
@@ -71,8 +71,11 @@ dynamicLabel.Parent = mainFrame
 
 -- Timer logic for dynamic text updates
 task.spawn(function()
-    wait(5)
-    dynamicLabel.Text = "Tping..."
-    wait(5)
-    dynamicLabel.Text = "10 mins till pull lever"
+    dynamicLabel.Text = "Starting..." -- When executed
+    wait(10)
+    dynamicLabel.Text = "Collecting bonds data"
+    wait(17) -- 10 + 17 = 27 seconds
+    dynamicLabel.Text = "Collecting bonds now"
+    wait(35) -- 27 + 35 = 62 seconds
+    dynamicLabel.Text = "Restarting script"
 end)
